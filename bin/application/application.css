@@ -1,0 +1,26 @@
+.button-cancel{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-cancel:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-cancel:pressed{
+    -fx-background-color: #ca525a;
+}
+
+
+.button-confirm{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-confirm:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-confirm:pressed{
+    -fx-background-color: #ca525a;
+}
