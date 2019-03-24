@@ -165,6 +165,13 @@ public class CreateAccountController {
 				"    			PRIMARY KEY (id)\r\n" + 
 				"    		)");
 		ps.executeUpdate();
+		ps = connection.prepareStatement("create table scheduled_rent (\r\n" + 
+				"	DAY_RENTED VARCHAR(20) NOT NULL,\r\n" + 
+				"	NAME VARCHAR(30) NOT NULL,\r\n" + 
+				"	ROOM_RENTED VARCHAR(10) NOT NULL,\r\n" + 
+				"	TIME_RENTED VARCHAR(10) NOT NULL\r\n" + 
+				")");'
+		ps.executeUpdate();
 //		ps = connection.prepareStatement("INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)");
 //		
 //		ps.executeUpdate();
