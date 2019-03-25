@@ -142,8 +142,19 @@ public class CreateAccountController {
     void createTable(ActionEvent event) {try {
 		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
-		PreparedStatement ps = connection.prepareStatement("create SCHEMA account");
+		PreparedStatement ps = null;
+		ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSSCHEMAS WHERE   SCHEMANAME = 'ACCOUNT'");
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next() == false) {
+		ps = connection.prepareStatement("create SCHEMA account");
 		ps.executeUpdate();
+		}
+		
+		
+		ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'ORDERS'");
+		rs = ps.executeQuery();
+		if(!rs.next()) {
 		ps = connection.prepareStatement("    	CREATE TABLE orders (\r\n" + 
 				"    			OID INTEGER NOT NULL,\r\n" + 
 				"    			STUDENT_NUMBER VARCHAR(20) NOT NULL,\r\n" + 
@@ -157,6 +168,11 @@ public class CreateAccountController {
 				"    			PRIMARY KEY (OID)\r\n" + 
 				"    		)");
 		ps.executeUpdate();
+		}
+		
+		ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'USERS'");
+		rs = ps.executeQuery();
+		if(!rs.next()) {
 		ps = connection.prepareStatement("    	create TABLE account.users(\r\n" + 
 				"    			id integer not NULL,\r\n" + 
 				"    			username VARCHAR(120) not NULL,\r\n" + 
@@ -165,18 +181,24 @@ public class CreateAccountController {
 				"    			PRIMARY KEY (id)\r\n" + 
 				"    		)");
 		ps.executeUpdate();
+		}
+		
+		ps = connection.prepareStatement("SELECT  * FROM    SYS.SYSTABLES WHERE   TABLENAME = 'SCHEDULED_RENT'");
+		rs = ps.executeQuery();
+		if(!rs.next()) {
 		ps = connection.prepareStatement("create table scheduled_rent (\r\n" + 
 				"	DAY_RENTED VARCHAR(20) NOT NULL,\r\n" + 
 				"	NAME VARCHAR(30) NOT NULL,\r\n" + 
 				"	ROOM_RENTED VARCHAR(10) NOT NULL,\r\n" + 
 				"	TIME_RENTED VARCHAR(10) NOT NULL\r\n" + 
-				")");'
+				")");
 		ps.executeUpdate();
+		}
 //		ps = connection.prepareStatement("INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)");
 //		
 //		ps.executeUpdate();
 		
-	
+		rs.close();
 		ps.close();
 		connection.close();
 	} catch (ClassNotFoundException e) {
