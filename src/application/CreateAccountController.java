@@ -66,9 +66,16 @@ public class CreateAccountController {
 			PreparedStatement ps = connection.prepareStatement("SELECT ID FROM ACCOUNT.USERS ORDER BY ID DESC ");
 			ResultSet rs = ps.executeQuery();
 			int id = 1;
-			if(rs.next()) {
-				id = Integer.parseInt(rs.getString("ID")) + 1;
-			}
+			//check for password strength
+			boolean checkUpperCase = !pass.equals(pass.toLowerCase());
+			boolean checkLowerCase = !pass.equals(pass.toUpperCase());
+			boolean checkhasNumbers = pass.matches(".*\\d.*");
+			int len = pass.length();
+
+			if(checkUpperCase == true && checkLowerCase == true && checkhasNumbers == true && len > 8 && len < 20) {
+				if(rs.next()) {
+					id = Integer.parseInt(rs.getString("ID")) + 1;
+				}
 			
 			ps = connection.prepareStatement("INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)");
 			ps.setString(1, Integer.toString(id));
@@ -87,7 +94,10 @@ public class CreateAccountController {
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.showAndWait();
 			
-			
+			}else {
+				//replace with error page
+				System.out.println("n");
+			}	
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
