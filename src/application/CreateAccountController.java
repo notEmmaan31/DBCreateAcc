@@ -149,7 +149,9 @@ public class CreateAccountController {
     }
     
     @FXML
-    void createTable(ActionEvent event) {try {
+    void createTable(ActionEvent event) {
+    	
+    	try {
 		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Connection connection = DriverManager.getConnection("jdbc:derby://localhost:1527/srmsDB;create=true");
 		PreparedStatement ps = null;
