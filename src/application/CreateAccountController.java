@@ -95,8 +95,16 @@ public class CreateAccountController {
 			primaryStage.showAndWait();
 			
 			}else {
-				//replace with error page
-				System.out.println("n");
+				
+				Parent root = (Parent) FXMLLoader.load(getClass().getResource("unacceptedPass.fxml"));
+				Scene scene = new Scene(root);
+				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				Stage primaryStage = new Stage();
+				primaryStage.initModality(Modality.APPLICATION_MODAL);
+				primaryStage.setScene(scene);
+				primaryStage.initStyle(StageStyle.UNDECORATED);
+				primaryStage.showAndWait();
+				
 			}	
 			
 		} catch (ClassNotFoundException e) {
