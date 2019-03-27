@@ -23,7 +23,7 @@
                </children>
             </Pane>
             <Button fx:id="btn_exit" layoutX="370.0" layoutY="163.0" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #ca525b; -fx-text-fill: #ffffff;" text="OKAY" />
-            <Label contentDisplay="CENTER" layoutX="122.0" layoutY="81.0" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="Account successfuly added!" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="122.0" layoutY="81.0" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="Account successfully added!" textAlignment="CENTER" />
          </children>
       </AnchorPane>
    </children>
