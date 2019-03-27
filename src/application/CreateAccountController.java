@@ -71,32 +71,26 @@ public class CreateAccountController {
 			boolean checkLowerCase = !pass.equals(pass.toUpperCase());
 			boolean checkhasNumbers = pass.matches(".*\\d.*");
 			int len = pass.length();
-
-			if(checkUpperCase == true && checkLowerCase == true && checkhasNumbers == true && len > 8 && len < 20) {
-				if(rs.next()) {
-					id = Integer.parseInt(rs.getString("ID")) + 1;
-				}
+			boolean emailBelievable1 = email.contains("@");
+			boolean emailBelievable2 = email.contains(".com");
 			
-			ps = connection.prepareStatement("INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)");
-			ps.setString(1, Integer.toString(id));
-			ps.setString(2, user);
-			ps.setString(3,encrypt(pass));
-			ps.setString(4, email);
-			
-			ps.executeUpdate();
-			
-			Parent root = (Parent) FXMLLoader.load(getClass().getResource("alert.fxml"));
-			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			Stage primaryStage = new Stage();
-			primaryStage.initModality(Modality.APPLICATION_MODAL);
-			primaryStage.setScene(scene);
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.showAndWait();
-			
-			}else {
+			//check believable email
+			if(emailBelievable1 == true && emailBelievable2 == true) {
+				//check for password strength
+				if(checkUpperCase == true && checkLowerCase == true && checkhasNumbers == true && len > 8 && len < 20) {
+					if(rs.next()) {
+						id = Integer.parseInt(rs.getString("ID")) + 1;
+					}
 				
-				Parent root = (Parent) FXMLLoader.load(getClass().getResource("unacceptedPass.fxml"));
+				ps = connection.prepareStatement("INSERT INTO ACCOUNT.USERS (ID,USERNAME,PASSWORD,EMAIL) VALUES (?, ?, ?, ?)");
+				ps.setString(1, Integer.toString(id));
+				ps.setString(2, user);
+				ps.setString(3,encrypt(pass));
+				ps.setString(4, email);
+				
+				ps.executeUpdate();
+				
+				Parent root = (Parent) FXMLLoader.load(getClass().getResource("alert.fxml"));
 				Scene scene = new Scene(root);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				Stage primaryStage = new Stage();
@@ -105,7 +99,29 @@ public class CreateAccountController {
 				primaryStage.initStyle(StageStyle.UNDECORATED);
 				primaryStage.showAndWait();
 				
-			}	
+				}else {
+					
+					Parent root = (Parent) FXMLLoader.load(getClass().getResource("unacceptedPass.fxml"));
+					Scene scene = new Scene(root);
+					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+					Stage primaryStage = new Stage();
+					primaryStage.initModality(Modality.APPLICATION_MODAL);
+					primaryStage.setScene(scene);
+					primaryStage.initStyle(StageStyle.UNDECORATED);
+					primaryStage.showAndWait();
+					
+				}
+			}else {
+				Parent root = (Parent) FXMLLoader.load(getClass().getResource("unacceptedEmail.fxml"));
+				Scene scene = new Scene(root);
+				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				Stage primaryStage = new Stage();
+				primaryStage.initModality(Modality.APPLICATION_MODAL);
+				primaryStage.setScene(scene);
+				primaryStage.initStyle(StageStyle.UNDECORATED);
+				primaryStage.showAndWait();
+			}
+				
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
