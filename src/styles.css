@@ -1,0 +1,573 @@
+/* Rooms Scrollpane */
+.scroll-pane{
+    -fx-background: #ffffff;
+    -fx-border-color: transparent;
+ }
+ 
+ .scroll-pane:focused{
+    -fx-background: #ffffff;
+    -fx-border-color: transparent;
+ }
+
+ .scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical
+{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+
+}
+
+.scroll-pane .scroll-bar:horizontal
+{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+
+}
+
+.scroll-pane .scroll-bar:vertical .track
+{
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2em;
+}
+
+.scroll-pane .scroll-bar:horizontal .decrement-button
+{
+    -fx-background: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 0 10 0;
+
+}
+
+.scroll-pane .scroll-bar:vertical .decrement-button
+{
+
+    -fx-background: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow
+{
+    -fx-padding: -2;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb
+{
+    -fx-background-color: derive(black,80%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.scroll-pane .scroll-bar:horizontal .thumb
+{
+    -fx-background-color: derive(black,80%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+/*Alert */
+
+.label-alert{
+	-fx-text-fill: #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 30px;
+}
+
+/*Prompt */
+.label-promptHeader{
+	-fx-text-fill: #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 36px;
+	-fx-font-weight: 900;
+}
+
+.label-promptRent{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 18px;
+
+}
+.label-promptRemove{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 18px;
+
+}
+
+.label-promptConfirm{
+	-fx-text-fill: #333333;
+	-fx-font-family: Calibri;
+	-fx-font-size: 21px;
+
+}
+
+.button-terms{
+	-fx-background-color: transparent;
+	-fx-text-fill:  #ca525a;
+	-fx-font-family: Calibri;
+	-fx-font-weight: 900;
+	
+}
+
+.button-terms:hover{
+	-fx-text-fill:  #ee626c;
+}
+
+.label-termsHeader{
+	-fx-text-fill:  #323232;
+	-fx-font-family: Cambria;
+	-fx-font-size: 23px;
+	-fx-font-weight: 900;
+}
+
+.label-terms{
+	-fx-text-fill:  #323232;
+	-fx-font-family: Calibri;
+	-fx-font-size: 19px;
+}
+
+/*Rooms container for Scrollpane */
+.stackPane-UI{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/*Time Header Buttons */
+.button-headerMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#ffffff;
+	-fx-font-size:20px;
+	-fx-font-weight:900;
+	-fx-font-family:Arial;
+}
+
+.label-headerMin{
+	-fx-text-fill:#ffffff;
+	-fx-font-size:17px;
+	-fx-font-weight:900;
+	-fx-font-family:Arial;
+}
+
+.label-subHMin{
+	-fx-text-fill:#ffffff;
+	-fx-font-size:17px;
+	-fx-font-weight:100;
+	-fx-font-family:Arial;
+}
+
+.button-header{
+	-fx-background-color: #000000;
+	-fx-text-fill:#ffffff;
+	-fx-font-size:14px;
+	-fx-font-weight:lighter;
+	-fx-font-family:Calibri;
+}
+
+/*Rooms Toggle-buttons */
+.toggle-button-UI{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0;
+    -fx-border-width: .2;
+    -fx-border-color:#b2b2b2;
+	-fx-text-fill: #8c8c8c;
+	-fx-font-size:40px;
+	-fx-font-weight:600;
+	-fx-font-family: Calibri;
+}
+
+.toggle-button-UI:hover{
+    -fx-background-color: derive(#D3D3D3,70%);
+}
+
+
+.toggle-button-UI:selected{
+    -fx-background-color: derive(#D3D3D3,50%);
+}
+
+.toggle-button-UI-rented{
+    -fx-background-color: derive(#df505a,10%);
+    -fx-background-radius: 0;
+    -fx-border-width: .2;
+    -fx-border-color:#b2b2b2;
+
+}
+
+
+.toggle-button-UI-rented:hover{
+    -fx-background-color: derive(#fd7d86,20%);
+}
+
+.toggle-button-UI-rented:selected{
+    -fx-background-color: derive(#ff878e,30%);
+}
+
+
+.toggle-button-UI-scheduled{
+    -fx-background-color: #206175;
+    -fx-background-radius: 0;
+    -fx-border-width: .2;
+    -fx-border-color:#b2b2b2;
+    
+}
+
+
+.toggle-button-UI-scheduled:hover{
+    -fx-background-color: #26738b;
+}
+
+.toggle-button-UI-scheduled:selected{
+    -fx-background-color: #287992;
+}
+
+/*Label day
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
+.label-dayMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#191919;
+	-fx-font-size:29px;
+	-fx-font-weight:900;
+	-fx-font-family: Arial;
+	
+}
+
+.label-day{
+	-fx-background-color: transparent;
+	-fx-text-fill:#f2f2f2;
+	-fx-font-size:70px;
+	-fx-font-weight:900;
+	-fx-font-family: Cambria;
+	
+}
+
+/*Label Rooms (for ToggleButton UI)
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
+ 
+ /*
+.label-1Min{
+	-fx-background-color: transparent;
+	-fx-text-fill:#000000;
+	-fx-font-size:13px;
+	-fx-font-weight:900;
+	-fx-font-family: Arial;
+}
+
+.label-2Min{
+	-fx-background-color: transparent;
+	-fx-text-fill: #8c8c8c;
+	-fx-font-size:40px;
+	-fx-font-weight:600;
+	-fx-font-family: Calibri;
+} 
+
+.label-1{
+	-fx-background-color: transparent;
+	-fx-text-fill:#eb777f;
+	-fx-font-size:18px;
+	-fx-font-weight:800;
+	-fx-font-family: Arial;
+}
+
+.label-2{
+	-fx-background-color: transparent;
+	-fx-text-fill:#eb777f;
+	-fx-font-size:37px;
+	-fx-font-weight:900;
+}
+*/
+.button-timeMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #7f7f7f;
+	-fx-font-size:22px;
+	-fx-font-weight:900;
+	-fx-font-family: Calibri;
+}
+
+.button-1subMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #7f7f7f;
+	-fx-font-size:22px;
+	-fx-font-weight:700;
+	-fx-font-family: Calibri;
+}
+.button-2subMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #7f7f7f;
+	-fx-font-size:18px;
+	-fx-font-weight:700;
+	-fx-font-family: Calibri;
+}
+
+.button-3subMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #7f7f7f;
+	-fx-font-size:26px;
+	-fx-font-weight:900;
+	-fx-font-family: Calibri;
+}
+
+
+.button-1Min{
+	-fx-background-color: transparent;
+	-fx-text-fill: #323232;
+	-fx-font-size:35px;
+	-fx-font-weight:900;
+	-fx-font-family: Calibri;
+}
+
+.button-2Min{
+	-fx-background-color: transparent;
+	-fx-text-fill: #323232;
+	-fx-font-size:35px;
+	-fx-font-weight:900;
+	-fx-font-family: Calibri;
+}
+
+
+
+
+.label-bottom{
+	-fx-text-fill: #666666;
+	-fx-font-size: 17px;
+	-fx-font-weight: 900;
+	-fx-font-family: Calibri;
+}
+
+
+
+
+
+/*Button Floor
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
+ 
+.label-floorMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#191919;
+	-fx-font-size:20px;
+	-fx-font-family: Calibri;
+	-fx-font-weight:900;
+}
+ 
+.button-floorMin{
+	-fx-background-color: transparent;
+	-fx-text-fill:#666666;
+	-fx-font-size:22px;
+	-fx-font-family: Calibri;
+	-fx-font-weight:900;
+}
+
+.button-floorMin:hover{
+	-fx-text-fill:#b2b2b2;
+}
+
+.button-floorMin:focused{
+	-fx-text-fill:#b2b2b2;
+}
+
+
+.button-floor{
+	-fx-background-color: transparent;
+	-fx-text-fill:#e99197;
+	-fx-font-size:19px;
+	-fx-font-family: Calibri;
+	-fx-font-weight:700;
+}
+
+.button-floor:hover{
+	-fx-text-fill:#ebbfc2;
+}
+
+.button-floor:focused{
+	-fx-text-fill:#616161;
+}
+
+
+/*Button functions (Rent, Remove, Update, Transaction, Manage, Logout)
+ *	Min: 1366 x 768 
+ *	Preferred: 1920 x 1080
+ *	
+ *	*/
+ .label-functionMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #4c4c4c;
+	-fx-font-size: 30px;
+	-fx-font-family: Cambria;
+	-fx-font-weight: 900;
+}
+ 
+.button-functionMin{
+	-fx-background-color: transparent;
+	-fx-text-fill: #666666;
+	-fx-font-size: 22px;
+	-fx-font-family:  Arial;
+	-fx-font-weight: 900;
+}
+
+.button-functionMin:hover{
+	-fx-text-fill: #b2b2b2;
+}
+
+.button-functionMin:focused{
+	-fx-text-fill:#b2b2b2;
+}
+
+
+
+.button-function{
+	-fx-background-color: transparent;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 34px;
+	-fx-font-family:  Arial;
+	-fx-font-weight: 900;
+}
+
+.button-function:hover{
+	-fx-text-fill:#ebbfc2;
+}
+
+.button-function:focused{
+	-fx-text-fill:#ca525b;
+}
+
+
+/*Generic buttons
+ *	
+ *	*/
+
+.button-cancel{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-cancel:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-cancel:pressed{
+    -fx-background-color: #ca525a;
+}
+
+
+
+.button-retry{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-retry:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-retry:pressed{
+    -fx-background-color: #ca525a;
+}
+
+
+
+.button-confirm{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-confirm:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-confirm:pressed{
+    -fx-background-color: #ca525a;
+}
+
+.button-ok{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-ok:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-ok:pressed{
+    -fx-background-color: #ca525a;
+}
+
+.button-change{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-change:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-change:pressed{
+    -fx-background-color: #ca525a;
+}
+
+.button-forgot{
+	-fx-text-fill: #ca525a;
+	-fx-background-color: transparent;
+	-fx-font-weight: 700;
+}
+
+.button-forgot:hover{
+	-fx-text-fill: #ee626c;
+}
+
+.button-forgot:pressed{
+	-fx-text-fill: #ee626c;
+}
+
+.button-back{
+    -fx-text-fill:#ffffff;
+    -fx-background-color: #515151;
+}
+
+.button-back:hover{
+    -fx-background-color: #ee626c;
+}
+
+.button-back:pressed{
+    -fx-background-color: #ca525a;
+}
+
+
+/*Transaction Buttons */
+.button-daily{
+	-fx-background-color: transparent;
+	-fx-text-fill: #8b8b8b;
+	-fx-font-family: arial;
+	-fx-font-weight: 800;
+	-fx-font-size: 24px;
+}
+
+.button-daily:hover{
+	-fx-text-fill: #b0b0b0;
+	
+}
+
+.label-ui{
+	-fx-font-family:  Arial;
+	-fx-text-fill: ffffff;
+	-fx-font-size: 13px;
+	-fx-font-weight: 900;
+}
+
+
+.button-Tile1{
+	-fx-background-color: #000000;
+	-fx-text-fill: #ffffff;
+}

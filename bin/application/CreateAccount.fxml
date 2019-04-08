@@ -5,73 +5,62 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="931.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
    <children>
-      <HBox alignment="BOTTOM_CENTER" layoutX="-7.0" prefHeight="146.0" prefWidth="731.0" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label contentDisplay="CENTER" style="-fx-text-fill: #ca525b; -fx-font-family: arial; -fx-font-weight: 900; -fx-font-size: 44px;" text="MANAGE ROOMS" textAlignment="CENTER" />
-         </children>
-      </HBox>
       <Pane layoutY="150.0" prefHeight="450.0" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
          <children>
-            <VBox alignment="CENTER" layoutX="147.0" layoutY="22.0">
+            <VBox alignment="CENTER" layoutY="36.0" prefHeight="49.0" prefWidth="931.0">
                <children>
-                  <Label style="-fx-font-family: Calibri; -fx-font-size: 32px; -fx-font-weight: 600;" text="SERVER MANAGER" />
-                  <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: lighter; -fx-text-fill: #6c6c6c;" text="Please enter the required administrator account information.">
+                  <Label style="-fx-font-family: Calibri; -fx-font-size: 22px; -fx-font-weight: 900; -fx-text-fill: #323232;" text="Please enter the required administrator account information.">
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets bottom="10.0" top="20.0" />
                      </VBox.margin>
                   </Label>
                </children>
             </VBox>
-            <VBox layoutX="182.0" layoutY="129.0">
+            <HBox alignment="TOP_CENTER" layoutY="90.0" prefHeight="231.0" prefWidth="931.0">
                <children>
-                  <TextField fx:id="tf_username" prefHeight="26.0" prefWidth="479.0" promptText="Username">
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <PasswordField fx:id="tf_password" prefHeight="26.0" prefWidth="479.0" promptText="Password">
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </PasswordField>
-                  <TextField fx:id="tf_email" prefHeight="26.0" prefWidth="479.0" promptText="Email">
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </TextField>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="230.0" prefWidth="285.0" style="-fx-font-family: Calibri; -fx-font-size: 17px; -fx-text-fill: #323232; -fx-font-weight: 900;" text=" Password must be: &#10;&#10;• 8 characters longer&#10;• less than 20 characters&#10;• must contain an upper case character &#10;• must contain a numeric character&#10;&#10;" textAlignment="JUSTIFY" wrapText="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <Line endY="240.0" fill="#757575" startY="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="35.0" />
+                     </HBox.margin>
+                  </Line>
+                  <VBox prefHeight="102.0" prefWidth="363.0">
+                     <children>
+                        <TextField fx:id="tf_username" prefHeight="26.0" prefWidth="479.0" promptText="Username">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="60.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="tf_password" prefHeight="26.0" prefWidth="479.0" promptText="Password">
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-            <HBox alignment="CENTER" layoutY="297.0" prefHeight="38.0" prefWidth="840.0">
+            </HBox>
+            <HBox alignment="CENTER" layoutY="291.0" prefHeight="153.0" prefWidth="931.0">
                <children>
                   <VBox>
                      <children>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <Button fx:id="btn_serverStart" mnemonicParsing="false" onAction="#serverStart" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="START SERVER" />
-                              <Button fx:id="btn_serverShut" mnemonicParsing="false" onAction="#serverShut" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="STOP SERVER">
-                                 <HBox.margin>
-                                    <Insets left="50.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <Button fx:id="btn_tableCreate" mnemonicParsing="false" onAction="#createTable" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="CREATE TABLES">
-                                 <HBox.margin>
-                                    <Insets left="50.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <Button fx:id="btn_getIP" mnemonicParsing="false" onAction="#getIP" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="GET HOST IP">
-                                 <HBox.margin>
-                                    <Insets left="50.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
                         <HBox alignment="CENTER">
                            <children>
                               <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exit" prefHeight="38.0" prefWidth="108.0" styleClass="button-cancel" stylesheets="@../application/application.css" text="EXIT">
@@ -79,7 +68,7 @@
                                     <Insets right="200.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="btn_create4" mnemonicParsing="false" onAction="#create" prefHeight="38.0" prefWidth="108.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="CONFIRM">
+                              <Button fx:id="btn_create4" mnemonicParsing="false" onAction="#create" prefHeight="38.0" prefWidth="181.0" style="-fx-text-fill: #ffffff;" styleClass="button-confirm" stylesheets="@../application/application.css" text="CREATE ACCOUNT">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -95,5 +84,30 @@
             </HBox>
          </children>
       </Pane>
+      <VBox alignment="TOP_CENTER" prefHeight="205.0" prefWidth="931.0">
+         <children>
+            <ImageView fitHeight="99.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="BOTTOM_CENTER" prefWidth="840.0">
+               <children>
+                  <Label contentDisplay="CENTER" styleClass="label-promptHeader" stylesheets="@../../../StudioRental-SEproject/src/styles.css" text="SERVER MANAGER" textAlignment="CENTER" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Line endX="400.0" startX="-100.0" stroke="#b2b2b2">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Line>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
